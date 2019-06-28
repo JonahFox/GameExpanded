@@ -24,7 +24,7 @@ while game_running == True:
     print(player['name'] + ' has ' + str(player['mana']) + ' mana left')
     print(monster['name'] + ' has ' + str(monster['health']) + ' health ')
 
-
+#Alfie is gay 
 
     while new_round == True:
         player_buffed = False
