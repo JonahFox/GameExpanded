@@ -55,17 +55,17 @@ while game_running == True:
 
 
         
-        if player['mana'] <= 0:
-                has_mana = False    
-        if player_choice == '2' and has_mana == False:
-            print('You are out of mana')  
+        elif player['mana'] <= 0:
+            has_mana = False
+            if player_choice == '2' and has_mana == False:
+                print('You are out of mana')
 
         elif player_choice == '2' and player['mana'] >= player['mana_cost']:
             player['health'] = player['health'] + player['heal']
             player['mana'] = player['mana'] - player['mana_cost']
             player['health'] = player['health'] - calculate_monster_attack()
             if player['health'] <= 0:
-                monster_won = True 
+                monster_won = True
                 player_buffed = False
         
 
@@ -84,16 +84,15 @@ while game_running == True:
             new_round = False
             game_running = False 
 
-       # else:
-        #    print('Invalid Input')
+        else:
+            print('Invalid Input')
 
         if player_won == False and monster_won == False:
             print(player['name'] + ' has ' + str(player['health']) + ' health left')
             print(monster['name'] + ' has ' + str(monster['health']) + ' health left')
             print(player['name'] + ' has ' + str(player['mana']) + ' mana left')
             print('---' * 7)
-        if player_choice >= '5':
-            print('Invalid Input')
+
             
         elif player_won:
             print(player['name'] + ' has won!')
